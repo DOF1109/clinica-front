@@ -6,23 +6,30 @@ import axios from 'axios'
 
 const Home = () => {
   const url = "https://jsonplaceholder.typicode.com/users"
-  const [dentists, setDentists] = useState([])
+  const [dentists, setDentists] = useState()
+  const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {
     const resp = await axios(url)
     // console.log(resp.data)
-    return resp.data
+    setDentists(resp.data)
+    setLoading(false)
   }
 
   useEffect(() => {
-    console.log(fetchData())
+    fetchData()
   }, [])
 
   return (
     <main className="" >
       <h1>Home</h1>
       <div className='card-grid'>
-        {}
+        {loading ? 
+          <p>Cargando...</p>
+          :
+          dentists.map( dentist => 
+            <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id} /> 
+          )}
       </div>
     </main>
   )
