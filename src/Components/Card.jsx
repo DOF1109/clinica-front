@@ -11,7 +11,7 @@ const Card = ({ name, username, id }) => {
     <div className="card">
         {/* En cada card deberan mostrar en name - username y el id */}
         <img 
-          src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.es%2Ficono-gratis%2Fusuario_747545&psig=AOvVaw16l6wBK78wGQ5SbxfI7ZVX&ust=1711479366226000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMDyidmLkIUDFQAAAAAdAAAAABAE" 
+          src='./images/doctor.jpg'
           alt="Foto de perfil"
           width={100} />
         
