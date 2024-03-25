@@ -17,7 +17,7 @@ const Card = ({ name, username, id }) => {
         
         <p>{name}</p>
 
-        <p>{username}</p>
+        <p>{id} - {username}</p>
 
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
