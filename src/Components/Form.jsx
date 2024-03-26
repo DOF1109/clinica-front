@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [pacient, setPacient] = useState({
+    name: "",
     email: "",
-    password: "",
   });
   const [show, setShow] = useState(false);
   const [err, setErr] = useState(false);
@@ -13,11 +13,11 @@ const Form = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (
       pacient.email.trim() &&
-      pacient.password.trim() &&
+      pacient.name.trim() &&
       regex.test(pacient.email) &&
-      pacient.password.length >= 6 &&
+      pacient.name.length > 5 &&
       !pacient.email.includes(" ") &&
-      !pacient.password.includes(" ")
+      !pacient.name.includes(" ")
     ) {
       setShow(true);
       setErr(false);
@@ -29,7 +29,9 @@ const Form = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    console.log(name);
     setPacient({ ...pacient, [name]: value });
+    console.log(pacient.name);
   };
 
   return (
@@ -42,21 +44,17 @@ const Form = () => {
           value={pacient.email}
           onChange={handleInputChange}
         />
-        <label>Password</label>
+        <label>Name</label>
         <input
-          type="password"
-          name="password"
-          value={pacient.password}
+          type="name"
+          name="name"
+          value={pacient.name}
           onChange={handleInputChange}
         />
         <button type="submit">Enviar</button>
       </form>
-      {show ? (
-        <h4>Bienvenido!</h4>
-      ) : (
-        <p>Coloque sus email y password para ingresar</p>
-      )}
-      {err && <p>Debe colocar sus datos correctamente</p>}
+      {show && <h4>Gracias {pacient.name}, te contactaremos cuando antes vía mail</h4>}
+      {err && <p>Por favor verifique su información nuevamente</p>}
     </div>
   );
 };
