@@ -38,8 +38,6 @@ const Home = () => {
           dentists.map((dentist) => (
             <Card
               key={dentist.id}
-              name={dentist.name}
-              username={dentist.username}
               id={dentist.id}
             />
           ))

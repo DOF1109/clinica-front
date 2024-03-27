@@ -1,8 +1,11 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
+
+const localStorageFavs = JSON.parse(localStorage.getItem("favs"));
 
 const initialState = {
   darkMode: false,
   data: [],
+  favs: localStorageFavs || [],
 };
 
 const reducer = (state, action) => {
@@ -11,6 +14,12 @@ const reducer = (state, action) => {
       return { ...state, darkMode: !state.darkMode };
     case "SET_DATA":
       return { ...state, data: action.payload };
+    case "ADD_FAV":
+      localStorage.setItem(
+        "favs",
+        JSON.stringify([...state.favs, action.payload])
+      );
+      return { ...state, favs: [...state.favs, action.payload] };
     default:
       return state;
   }
