@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContextGlobal } from "./utils/ContextProvider";
-import axios from "axios";
+import { getDentist } from "../api/dentist";
 
 const Card = ({ id }) => {
-  const url = "https://jsonplaceholder.typicode.com/users/";
   const { state, dispatch } = useContextGlobal();
   const [dentist, setDentist] = useState();
 
-  const getDentist = async () => {
+  const getData = async () => {
     try {
-      const resp = await axios(url + id);
-      setDentist(resp.data);
+      const data = await getDentist(id);
+      setDentist(data);
     } catch (error) {
       console.log(error);
       alert("Error al cargar los datos. Intente nuevamente");
@@ -19,7 +18,7 @@ const Card = ({ id }) => {
   };
 
   useEffect(() => {
-    getDentist();
+    getData();
   }, []);
 
   const addFav = () => {

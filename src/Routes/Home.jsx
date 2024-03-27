@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Components/Card";
-import axios from "axios";
 import { useContextGlobal } from "../Components/utils/ContextProvider";
+import { getDentists } from "../api/dentist";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const url = "https://jsonplaceholder.typicode.com/users";
   const [dentists, setDentists] = useState();
   const [loading, setLoading] = useState(true);
   const { state, dispatch } = useContextGlobal();
 
-  const fetchData = async () => {
+  const getData = async () => {
     try {
-      const resp = await axios(url);
-    //   console.log(resp.data);
-      setDentists(resp.data);
-      dispatch({ type: "SET_DATA", payload: resp.data });
+      const data = await getDentists();
+      setDentists(data);
+      dispatch({ type: "SET_DATA", payload: data });
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -25,7 +23,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    getData();
   }, []);
 
   return (
@@ -35,12 +33,7 @@ const Home = () => {
         {loading ? (
           <p>Cargando...</p>
         ) : (
-          dentists.map((dentist) => (
-            <Card
-              key={dentist.id}
-              id={dentist.id}
-            />
-          ))
+          dentists.map((dentist) => <Card key={dentist.id} id={dentist.id} />)
         )}
       </div>
     </main>
