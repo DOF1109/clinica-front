@@ -1,38 +1,49 @@
-import React, { useEffect, useState } from 'react'
-import Card from '../Components/Card'
-import axios from 'axios'
+import React, { useEffect, useState } from "react";
+import Card from "../Components/Card";
+import axios from "axios";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const url = "https://jsonplaceholder.typicode.com/users"
-  const [dentists, setDentists] = useState()
-  const [loading, setLoading] = useState(true)
+  const url = "https://jsonplaceholder.typicode.com/users";
+  const [dentists, setDentists] = useState();
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
-    const resp = await axios(url)
-    // console.log(resp.data)
-    setDentists(resp.data)
-    setLoading(false)
-  }
+    try {
+      const resp = await axios(url);
+      // console.log(resp.data)
+      setDentists(resp.data);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      alert("Error al cargar los datos. Intente nuevamente");
+    }
+  };
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   return (
-    <main className="" >
+    <main className="">
       <h1>Home</h1>
-      <div className='card-grid'>
-        {loading ? 
+      <div className="card-grid">
+        {loading ? (
           <p>Cargando...</p>
-          :
-          dentists.map( dentist => 
-            <Card key={dentist.id} name={dentist.name} username={dentist.username} id={dentist.id} /> 
-          )}
+        ) : (
+          dentists.map((dentist) => (
+            <Card
+              key={dentist.id}
+              name={dentist.name}
+              username={dentist.username}
+              id={dentist.id}
+            />
+          ))
+        )}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
