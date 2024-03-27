@@ -40,9 +40,6 @@ const Card = ({ id }) => {
           <p>"Cargando..."</p>
         )}
 
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
       </Link>
       <button onClick={addFav} className="favButton">
         ⭐

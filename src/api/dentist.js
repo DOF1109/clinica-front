@@ -13,7 +13,7 @@ export const getDentists = async () => {
   }
 };
 
-// Un dentista
+// Un dentista por id
 export const getDentist = async (id) => {
   try {
     const resp = await axios(url + id);
