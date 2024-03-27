@@ -14,7 +14,6 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/favs">Favs</Link>
-        {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
         <button onClick={() => dispatch( {type: "CHANGE_THEME"} )}>Change theme</button>
       </ul>
     </nav>

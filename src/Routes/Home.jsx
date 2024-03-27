@@ -14,7 +14,7 @@ const Home = () => {
   const fetchData = async () => {
     try {
       const resp = await axios(url);
-      console.log(resp.data);
+    //   console.log(resp.data);
       setDentists(resp.data);
       dispatch({ type: "SET_DATA", payload: resp.data });
       setLoading(false);
