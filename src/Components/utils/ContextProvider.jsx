@@ -18,7 +18,7 @@ const reducer = (state, action) => {
       const newFavs = [...state.favs];
       if (!state.favs.some((fav) => fav.id === action.payload.id)) {
         newFavs.push(action.payload);
-        localStorage.setItem("favs", newFavs);
+        localStorage.setItem("favs", JSON.stringify(newFavs));
       }
       return { ...state, favs: newFavs };
     default:

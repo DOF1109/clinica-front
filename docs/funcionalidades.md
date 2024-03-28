@@ -77,7 +77,7 @@ Se deberá tener en cuenta lo siguiente:
   - Telefono
   - Sitio web
 
-### Pagina 4: Destacados
+### Pagina 4: Destacados --> COMPLETO
 
 En esta pagina se debera renderizar las [Cards](/src/Components/Card.jsx) pertinentes a los dentistas destacados. Dicha información deberá estar almacenada dentro del localStorage del browser y ser consumida dentro de la pagina
 
