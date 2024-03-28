@@ -36,7 +36,7 @@ Para ayudar a que puedas organizarte y realizar la entrega a tiempo, te dejamos 
 
 Importa los componentes pertinentes para envolver la App y crear el enrutado de la página. No importa que aún no tengamos los componentes que irán en cada vista, por el momento podes dejar solamente un div.
 
-### Paso 2: Creación de componentes para cada ruta
+### Paso 2: Creación de componentes para cada ruta --> COMPLETO
 
 Una vez definidas las rutas demandadas por la consigna, pasemos a crear los componentes que se verán en cada URL.
 
@@ -45,18 +45,18 @@ Una vez definidas las rutas demandadas por la consigna, pasemos a crear los comp
   - Crear un Link dinámico para el detalle de cada dentista en [/dentista/:id](/docs/funcionalidades.md#pagina-3-detalle-dentista)
   - Para [/favs](/docs/funcionalidades.md#pagina-4-destacados) consumir la información del localStorage y devolver una Card por cada dentista destacado
 
-### Paso 3: Implementación del Contexto Global
+### Paso 3: Implementación del Contexto Global --> COMPLETO
 
 Una vez que ya tenemos toda la estructura de nuestra aplicación podemos pasar a consumir la API realizando una llamada por fetch o axios.
 
 - Deberán guardar dicha información en un contexto global, junto con el theme de la app.
 - Utilizando useReducer crear los métodos necesarios para el manejo de su comportamiento (cambio de theme de la App y guardado de la respuesta de la API en el Contexto).
 
-### Paso 4: Consumir Contexto Global
+### Paso 4: Consumir Contexto Global --> COMPLETO
 
 Con la información ya en mano pasamos a “rellenar” los huecos que dejamos en nuestra estructura anterior, suscribiendo nuestros componentes al contexto global (solo aquellos que necesiten información del mismo)
 
-### Paso 4: Funcionalidad de destacados
+### Paso 4: Funcionalidad de destacados --> COMPLETO
 
 Cada card deberá tener un botón que dispare la acción de guardar una card que queremos destacar, dentro del localStorage. Deberás utilizar useReducer para manejar esta lógica.
 

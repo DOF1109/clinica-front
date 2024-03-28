@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const localStorageFavs = JSON.parse(localStorage.getItem("favs"));
 
@@ -15,11 +15,12 @@ const reducer = (state, action) => {
     case "SET_DATA":
       return { ...state, data: action.payload };
     case "ADD_FAV":
-      localStorage.setItem(
-        "favs",
-        JSON.stringify([...state.favs, action.payload])
-      );
-      return { ...state, favs: [...state.favs, action.payload] };
+      let newFavs = [...state.favs];
+      if (!state.favs.some((fav) => fav.id === action.payload.id)) {
+        newFavs = [...newFavs, action.payload];
+        localStorage.setItem("favs", newFavs);
+      }
+      return { ...state, favs: newFavs };
     default:
       return state;
   }

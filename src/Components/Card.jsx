@@ -23,7 +23,7 @@ const Card = ({ id }) => {
 
   const addFav = () => {
     dispatch({ type: "ADD_FAV", payload: dentist });
-    alert(dentist.username + " agregado a favoritos");
+    alert(dentist.name + " agregado a favoritos");
   };
 
   return (
@@ -39,7 +39,6 @@ const Card = ({ id }) => {
         ) : (
           <p>"Cargando..."</p>
         )}
-
       </Link>
       <button onClick={addFav} className="favButton">
         ⭐
