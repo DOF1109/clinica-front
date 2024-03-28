@@ -35,7 +35,7 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={handleSubmit}>
         <label>E-mail</label>
         <input
@@ -53,9 +53,11 @@ const Form = () => {
         />
         <button type="submit">Enviar</button>
       </form>
-      {show && <h4>Gracias {pacient.name}, te contactaremos cuando antes vía mail</h4>}
+      {show && (
+        <h4>Gracias {pacient.name}, te contactaremos cuando antes vía mail</h4>
+      )}
       {err && <p>Por favor verifique su información nuevamente</p>}
-    </div>
+    </>
   );
 };
 

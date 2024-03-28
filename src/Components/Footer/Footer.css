@@ -1,0 +1,14 @@
+.logo-footer {
+    display: flex;
+    align-items: center;
+}
+
+.social-footer {
+    display: flex;
+    align-items: center;
+}
+
+.social-footer img {
+    max-height: 20px;
+    margin: 0 .5rem;
+}

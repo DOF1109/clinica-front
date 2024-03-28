@@ -8,14 +8,14 @@ const Favs = () => {
   const { state, dispatch } = useContextGlobal();
 
   return (
-    <>
+    <div style={{ margin: "auto" }}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {state.favs.map((dentist) => (
           <Card key={dentist.id} id={dentist.id} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

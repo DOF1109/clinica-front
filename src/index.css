@@ -1,3 +1,7 @@
+#root {
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 code {
@@ -42,19 +47,18 @@ a:hover {
 }
 
 footer {
+  background: #aa202088;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
   height: 40px;
   margin-top: 2rem;
 }
 
 footer > img {
-  width: 200px;
   margin: 0;
 }
 footer > p {
@@ -67,8 +71,16 @@ form {
   flex-direction: column;
   justify-content: space-around;
   width: 300px;
-  height: 100px;
+  height: 150px;
   margin: 0 auto;
+}
+
+form button {
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: none;
+  padding: 0.5rem;
+  background: #aa20206c;
 }
 
 .card {
