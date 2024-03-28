@@ -15,9 +15,9 @@ const reducer = (state, action) => {
     case "SET_DATA":
       return { ...state, data: action.payload };
     case "ADD_FAV":
-      let newFavs = [...state.favs];
+      const newFavs = [...state.favs];
       if (!state.favs.some((fav) => fav.id === action.payload.id)) {
-        newFavs = [...newFavs, action.payload];
+        newFavs.push(action.payload);
         localStorage.setItem("favs", newFavs);
       }
       return { ...state, favs: newFavs };
