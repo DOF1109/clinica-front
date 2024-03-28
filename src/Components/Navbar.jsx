@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <img src="./images/DH.ico" alt="Logo DH" />
+      <img src="./DH.ico" alt="Logo DH" />
       <ul>
         <Link to="/">Home</Link>
         <Link to="/contact">Contact</Link>
