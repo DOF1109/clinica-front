@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getDentist } from "../api/dentist";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Detail = () => {
   const { id } = useParams();
   const [dentist, setDentist] = useState();
@@ -23,7 +21,7 @@ const Detail = () => {
   }, []);
 
   return (
-    <>
+    <div style={{ margin: "auto" }}>
       {dentist ? (
         <>
           <h1>Detail Dentist {dentist.id}</h1>
@@ -49,7 +47,7 @@ const Detail = () => {
       ) : (
         <p>Cargando...</p>
       )}
-    </>
+    </div>
   );
 };
 

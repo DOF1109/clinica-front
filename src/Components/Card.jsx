@@ -4,7 +4,7 @@ import { useContextGlobal } from "./utils/ContextProvider";
 import { getDentist } from "../api/dentist";
 
 const Card = ({ id }) => {
-  const { state, dispatch } = useContextGlobal();
+  const { dispatch } = useContextGlobal();
   const [dentist, setDentist] = useState();
 
   const getData = async () => {

@@ -24,6 +24,10 @@ code {
   cursor: pointer;
 }
 
+.favButton:hover {
+  background-color: rgba(136, 136, 136, 0.221);
+}
+
 h1 {
   text-align: center;
 }
@@ -81,6 +85,11 @@ form button {
   border: none;
   padding: 0.5rem;
   background: #aa20206c;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #aa20204e;
 }
 
 .card {
@@ -130,6 +139,10 @@ tr:nth-child(even) {
   background-color: #12121296;
   color: white;
 }
-.dark > a {
+.dark a {
   color: white;
+}
+
+.dark .favButton {
+  background-color: rgba(188, 188, 188, 0.32);
 }

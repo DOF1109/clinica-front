@@ -1,9 +1,11 @@
 .nav__logo {
-    height: 50px;
+  height: 50px;
 }
 
 .nav__item {
-  margin: 0 0.5rem;
+  margin: 0 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .nav__btn {
@@ -11,4 +13,9 @@
   border-radius: 8px;
   border: none;
   background: #aa202098;
+  cursor: pointer;
+}
+
+.nav__btn:hover {
+  background: #aa202073;
 }

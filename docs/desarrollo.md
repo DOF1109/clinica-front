@@ -60,6 +60,6 @@ Con la información ya en mano pasamos a “rellenar” los huecos que dejamos e
 
 Cada card deberá tener un botón que dispare la acción de guardar una card que queremos destacar, dentro del localStorage. Deberás utilizar useReducer para manejar esta lógica.
 
-### Paso 6: Estilado de componentes clave
+### Paso 6: Estilado de componentes clave --> COMPLETO
 
 En base al Theme actual deberías pasar determinada variante de colores a los componentes pertenecientes a las rutas (Home.jsx, Favs.jsx, Detail.jsx, Contact.jsx). Es opcional pero no obligatorio estilar más apartados, dicha opción tendrá peso a la hora de evaluar la calificación final

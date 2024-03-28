@@ -6,15 +6,23 @@ import "./Navbar.css";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-  const { state, dispatch } = useContextGlobal();
+  const { dispatch } = useContextGlobal();
 
   return (
     <nav>
-      <img className="nav__logo" src="./DH.ico" alt="Logo DH" />
+      <Link to="/">
+        <img className="nav__logo" src="./DH.ico" alt="Logo DH" />
+      </Link>
       <ul>
-        <Link className="nav__item" to="/">Home</Link>
-        <Link className="nav__item" to="/contact">Contact</Link>
-        <Link className="nav__item" to="/favs">Favs</Link>
+        <Link className="nav__item" to="/">
+          Home
+        </Link>
+        <Link className="nav__item" to="/contact">
+          Contact
+        </Link>
+        <Link className="nav__item" to="/favs">
+          Favs
+        </Link>
         <button
           className="nav__btn"
           onClick={() => dispatch({ type: "CHANGE_THEME" })}

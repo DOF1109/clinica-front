@@ -29,9 +29,7 @@ const Form = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    console.log(name);
     setPacient({ ...pacient, [name]: value });
-    console.log(pacient.name);
   };
 
   return (
@@ -51,7 +49,7 @@ const Form = () => {
           value={pacient.name}
           onChange={handleInputChange}
         />
-        <button type="submit">Enviar</button>
+        <button type="submit">Send</button>
       </form>
       {show && (
         <h4>Gracias {pacient.name}, te contactaremos cuando antes vía mail</h4>

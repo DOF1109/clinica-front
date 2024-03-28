@@ -3,12 +3,10 @@ import Card from "../Components/Card";
 import { useContextGlobal } from "../Components/utils/ContextProvider";
 import { getDentists } from "../api/dentist";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Home = () => {
   const [dentists, setDentists] = useState();
   const [loading, setLoading] = useState(true);
-  const { state, dispatch } = useContextGlobal();
+  const { dispatch } = useContextGlobal();
 
   const getData = async () => {
     try {
